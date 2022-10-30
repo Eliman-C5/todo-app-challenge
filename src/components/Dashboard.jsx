@@ -1,37 +1,34 @@
-import { useState } from "react"
+import { useReducer } from "react";
+import { TYPES } from "../data/Types";
+import { todoReducer } from "../reducers/todoReducer";
 import { AddItems } from "./AddItems"
 import { TaskItem } from "./TaskItem";
 
-export const Dashboard = () => {
-
-  const [items, setItems] = useState(["First Task"]);
-  
-  const itemsList = (newItem) => {
-  
-    console.log(newItem)
-    
-    //Si el valor que se recibe ya esta en la lista de tareas, no se agregara
-    if (items.includes(newItem)) return;
-    
-    //Se agrega el valor que se recibe de la prop, y a medida que el usuario vaya agregando mas tareas
-    //Se iran agregando
-    setItems([...items, newItem])
-  
+const state = [
+  {
+    id: Date.now(),
+    name: 'First task',
+    //completed (Por Resolver)
   }
+];
+
+export const Dashboard = () => {
+  
+  const [todos, todosDispatch] = useReducer(todoReducer, state);
   
   return (
     <div className="relative -top-[100px] w-[80%] mx-auto flex flex-col z-10">
       
-      <AddItems newTask={(value) => itemsList(value)} />
+      <AddItems newTask={(value) => todosDispatch({type: TYPES.ADD, payload: value})} />
   
       <ul>
       
-        {items.map( item => (
-            <TaskItem item={item} />
+        {todos.map( todo => (
+            <TaskItem key={todo.id} item={todo.name} />
           ))
         }
       
-        <span>{items.length} items left</span>
+        <span>{todos.length} items left</span>
       
       </ul>
   

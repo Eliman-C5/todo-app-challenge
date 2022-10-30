@@ -11,7 +11,10 @@ export const AddItems = ({newTask}) => {
     if (inputValue.length <= 1 ) return
     
     //Enviamos el valor del input en una funcion a traves de las props
-    newTask(inputValue);
+    newTask({
+      id: Date.now(),
+      name: inputValue
+    });
     
     //Al enviarse la prop, ponemos la cajita vacia otra vez
     setInputValue("");
