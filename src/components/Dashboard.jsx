@@ -8,7 +8,7 @@ const state = [
   {
     id: Date.now(),
     name: 'First task',
-    //completed (Por Resolver)
+    completed: false,
   }
 ];
 
@@ -20,19 +20,35 @@ export const Dashboard = () => {
     <div className="relative -top-[100px] w-[80%] mx-auto flex flex-col z-10">
       
       <AddItems newTask={(value) => todosDispatch({type: TYPES.ADD, payload: value})} />
-  
-      <ul>
+      
+      {/* Hacer un componente aparte */}
+      <ul className="border border-[#e4e5f1] bg-[#fff] mt-5 rounded-lg shadow-md">
       
         {todos.map( todo => (
-            <TaskItem key={todo.id} item={todo.name} />
+            <TaskItem 
+              key={todo.id} 
+              todo={todo} 
+              todosDispatch={todosDispatch} 
+            />
           ))
         }
       
-        <span>{todos.length} items left</span>
+        <div className="flex justify-between  p-4">
+          <span>{todos.length} items left</span>
+          <button>Clear completed</button>
+        </div>
       
       </ul>
+      
+      {/* Hacer un componente aparte */}
+      {/* Definir un componente en Tailwind para estilos repetidos (PENDIENTE) */}
+      <div className="border border-[#e4e5f1] bg-[#fff] mt-5 rounded-lg shadow-md flex justify-center gap-8 p-4 text-[#484b6a] font-bold">
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
   
-      <div className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit accusamus sint enim harum praesentium officia iure tempore, corrupti vero dolorum quas doloremque molestiae. Quia, expedita neque. Reiciendis et ipsum animi, cum dicta similique, at nam officia eius illum ratione error cupiditate, optio aut est. Quibusdam asperiores dolor suscipit ea perferendis.</div>
+      <div className="text-[#484b6a] mt-20 font-bold text-center">Drag and drop to reorder list</div>
   
     </div>
   )

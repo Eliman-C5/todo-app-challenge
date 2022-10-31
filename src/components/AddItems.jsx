@@ -13,7 +13,8 @@ export const AddItems = ({newTask}) => {
     //Enviamos el valor del input en una funcion a traves de las props
     newTask({
       id: Date.now(),
-      name: inputValue
+      name: inputValue,
+      completed: false,
     });
     
     //Al enviarse la prop, ponemos la cajita vacia otra vez
@@ -34,6 +35,7 @@ export const AddItems = ({newTask}) => {
         placeholder="Create a new todo..."
         value={inputValue}
         onChange={onChange}
+        className="font-bold p-4 w-full rounded-lg outline-0"
       />
     </form>
   )
