@@ -23,6 +23,10 @@ export const todoReducer = (state, action) => {
     case TYPES.DELETE:
     
       return state.filter(item => item.id !== action.payload)
+      
+    case TYPES.CLEAR_COMPLETED_TODOS:
+    
+      return state.filter(item => !item.completed)
     
     default:
       return state

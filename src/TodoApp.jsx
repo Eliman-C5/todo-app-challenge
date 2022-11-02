@@ -1,16 +1,18 @@
 import { Dashboard } from "./components/Dashboard";
+import { TodoProvider } from "./context/TodoProvider";
 
 function TodoApp() {
 
   return (
-  
-  <div className="">
+  <TodoProvider>
+    <div className="">
     
-    <div className="h-[200px] bg-cover bg-[url('/images/bg-mobile-light.jpg')]"></div>
+      <div className="h-[200px] bg-cover bg-[url('/images/bg-mobile-light.jpg')]"></div>
       
-    <Dashboard />
+      <Dashboard />
     
-  </div>
+    </div>
+  </TodoProvider>
     
   )
 }
