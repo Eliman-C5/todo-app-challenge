@@ -23,7 +23,7 @@ export const TaskItem = ({ todosDispatch, todo }) => {
       
       <p className={`${todo.completed && 'line-through'} text-[#484b6a] font-bold`}>{todo.name}</p>
       
-      <button className="close" onClick={() => todosDispatch({type: TYPES.DELETE, payload: todo.id})}>X</button>
+      <img className="cursor-pointer h-[15px] w-[15px]" src='/images/icon-cross.svg' onClick={() => todosDispatch({type: TYPES.DELETE, payload: todo.id})}></img>
       
     </li>
   )

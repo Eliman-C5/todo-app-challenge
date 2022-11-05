@@ -7,7 +7,7 @@ export const TaskFilter = () => {
 
   {/* Definir un componente en Tailwind para estilos repetidos (PENDIENTE) */}
   return (
-    <div className="border border-[#e4e5f1] bg-[#fff] mt-5 rounded-lg shadow-md flex justify-center gap-8 p-4 text-[#484b6a] font-bold">
+    <div className="flex gap-4 relative left-[6%] text-[#484b6a] font-bold">
         <button onClick={() => {
           setIsActive(false);
           setIsCompleted(false);

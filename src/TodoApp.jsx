@@ -1,4 +1,5 @@
 import { Dashboard } from "./components/Dashboard";
+import { Header } from "./components/Header";
 import { TodoProvider } from "./context/TodoProvider";
 
 function TodoApp() {
@@ -6,14 +7,10 @@ function TodoApp() {
   return (
   <TodoProvider>
     <div className="">
-    
-      <div className="h-[200px] bg-cover bg-[url('/images/bg-mobile-light.jpg')]"></div>
-      
+      <Header />
       <Dashboard />
-    
     </div>
-  </TodoProvider>
-    
+  </TodoProvider>   
   )
 }
 
