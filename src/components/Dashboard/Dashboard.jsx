@@ -1,8 +1,8 @@
 import { useReducer } from "react";
-import { initialState } from "../data/initialState";
-import { TYPES } from "../data/Types";
-import { todoReducer } from "../reducers/todoReducer";
-import { AddItems, TaskItem, TasksLeft } from "./index"
+import { initialState } from "../../data/initialState";
+import { TYPES } from "../../data/Types";
+import { todoReducer } from "../../reducers/todoReducer";
+import { AddItems, TaskItem, TasksLeft } from "./"
 
 export const Dashboard = () => {
   
@@ -14,7 +14,7 @@ export const Dashboard = () => {
       <AddItems newTask={(value) => todosDispatch({type: TYPES.ADD, payload: value})} />
       
       {/* Hacer un componente aparte */}
-      <ul className="border border-[#e4e5f1] bg-[#fff] mt-5 rounded-lg shadow-md">
+      <ul className="border border-[#e4e5f1] dark:border-btnBackground bg-[#fff] dark:bg-btnBackground mt-5 rounded-lg shadow-md ">
       
       
         {todos.map( todo => (
@@ -30,7 +30,7 @@ export const Dashboard = () => {
       
       </ul>
   
-      <div className="text-[#484b6a] mt-20 font-bold text-center">Drag and drop to reorder list</div>
+      <div className="text-principal mt-20 font-bold text-center">Drag and drop to reorder list</div>
   
     </div>
   )

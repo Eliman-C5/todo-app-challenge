@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { TodoContext } from '../context/TodoContext';
+import { TodoContext } from '../../context/TodoContext';
 
 export const TaskFilter = () => {
   
@@ -7,7 +7,7 @@ export const TaskFilter = () => {
 
   {/* Definir un componente en Tailwind para estilos repetidos (PENDIENTE) */}
   return (
-    <div className="flex gap-4 relative left-[6%] text-[#484b6a] font-bold">
+    <div className="flex gap-4 relative left-[6%] text-[#777a92] font-bold">
         <button onClick={() => {
           setIsActive(false);
           setIsCompleted(false);

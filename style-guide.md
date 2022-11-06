@@ -18,16 +18,18 @@ The designs were created to the following widths:
 
 ### Light Theme
 
-- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Gray: hsl(0, 0%, 98%) #fafafa (body)
+
 - Very Light Grayish Blue: hsl(236, 33%, 92%)
 - Light Grayish Blue: hsl(233, 11%, 84%)
 - Dark Grayish Blue: hsl(236, 9%, 61%)
-- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%) #484b6a (principal - body)
 
 ### Dark Theme
 
-- Very Dark Blue: hsl(235, 21%, 11%)
-- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+- Very Dark Blue: hsl(235, 21%, 11%) #161722 (body)
+- Very Dark Desaturated Blue: hsl(235, 24%, 19%) #25273c (btnBackground - Dashboard, AddItems)
+
 - Light Grayish Blue: hsl(234, 39%, 85%)
 - Light Grayish Blue (hover): hsl(236, 33%, 92%)
 - Dark Grayish Blue: hsl(234, 11%, 52%)
