@@ -15,13 +15,16 @@ export const TaskItem = ({ todosDispatch, todo }) => {
     >
     
       <div 
-        className='circle rounded-full border border-[#e4e5f1] dark:border-[#777a92]' 
+        className={`circle rounded-full border border-[#e4e5f1] dark:border-[#777a92] flex justify-center items-center ${todo.completed ? 'check' : ''}`} 
         onClick={() => {
           todosDispatch({type: TYPES.COMPLETED, payload: {...todo, completed: !todo.completed}});
         }}>
+        {
+          todo.completed && <img src='/images/icon-check.svg' className='h-[15px] w-[15px]' />
+        }
       </div>
       
-      <p className={`${todo.completed && 'line-through'} text-[#484b6a] dark:text-[#d2d3db] font-bold`}>{todo.name}</p>
+      <p className={`${todo.completed ? 'line-through text-[#484b6a]' : 'text-[#484b6a] dark:text-[#cacde8]'} font-bold`}>{todo.name}</p>
       
       <img className="cursor-pointer h-[15px] w-[15px]" src='/images/icon-cross.svg' onClick={() => todosDispatch({type: TYPES.DELETE, payload: todo.id})}></img>
       

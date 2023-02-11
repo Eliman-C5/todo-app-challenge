@@ -6,7 +6,6 @@ export const TodoProvider = ({children}) => {
 
   const [isActive, setIsActive] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
     <TodoContext.Provider value={{
@@ -14,8 +13,6 @@ export const TodoProvider = ({children}) => {
       setIsActive,
       isCompleted,
       setIsCompleted,
-      isDarkMode,
-      setIsDarkMode
     }}>
       {children}
     </TodoContext.Provider>

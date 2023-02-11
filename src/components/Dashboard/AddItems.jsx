@@ -35,7 +35,7 @@ export const AddItems = ({newTask}) => {
         placeholder="Create a new todo..."
         value={inputValue}
         onChange={onChange}
-        className="font-bold p-4 w-full rounded-lg outline-0 bg-[#fff] dark:bg-btnBackground" 
+        className="font-bold p-4 w-full rounded-lg outline-0 bg-[#fff] dark:bg-btnBackground dark:text-[#cacde8]" 
       />
     </form>
   )

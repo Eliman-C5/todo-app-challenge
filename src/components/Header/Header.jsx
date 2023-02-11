@@ -1,11 +1,9 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useContext } from 'react'
-import { TodoContext } from '../../context/TodoContext'
+import { useState, useEffect } from 'react';
 
 export const Header = () => {
-
-  const {isDarkMode, setIsDarkMode} = useContext(TodoContext);
+  
+  const [isDarkMode, setIsDarkMode] = useState(false);
   
   useEffect(() => {
     
@@ -23,8 +21,8 @@ export const Header = () => {
       'md:bg-[url("/images/bg-desktop-light.jpg")] bg-[url("/images/bg-mobile-light.jpg")]'}
     `}>
         
-      <div className="relative top-[40%] flex justify-between w-[80%] mx-auto">
-        <h1 className="text-white">TODO</h1>
+      <div className="relative top-[25%] flex justify-between w-[95%] md:w-[80%] mx-auto">
+        <h1 className="title text-white">TODO</h1>
         {
           isDarkMode ?
           <img 
