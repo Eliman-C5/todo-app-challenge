@@ -20,13 +20,13 @@ export const TaskItem = ({ todosDispatch, todo }) => {
           todosDispatch({type: TYPES.COMPLETED, payload: {...todo, completed: !todo.completed}});
         }}>
         {
-          todo.completed && <img src='../../../images/icon-check.svg' className='h-[15px] w-[15px]' />
+          todo.completed && <img src='/images/icon-check.svg' className='h-[15px] w-[15px]' />
         }
       </div>
       
       <p className={`${todo.completed ? 'line-through text-[#484b6a]' : 'text-[#484b6a] dark:text-[#cacde8]'} font-bold`}>{todo.name}</p>
       
-      <img className="cursor-pointer h-[15px] w-[15px]" src='../../../images/icon-cross.svg' onClick={() => todosDispatch({type: TYPES.DELETE, payload: todo.id})}></img>
+      <img className="cursor-pointer h-[15px] w-[15px]" src='/images/icon-cross.svg' onClick={() => todosDispatch({type: TYPES.DELETE, payload: todo.id})}></img>
       
     </li>
   )

@@ -27,13 +27,13 @@ export const Header = () => {
           isDarkMode ?
           <img 
             className="h-[35px] w-[35px] cursor-pointer" 
-            src="../../../images/icon-sun.svg" 
+            src="/images/icon-sun.svg" 
             alt="Sol para desactivar dark mode"
             onClick={() => setIsDarkMode(false)}
           />:
           <img 
             className="h-[35px] w-[35px] cursor-pointer" 
-            src="../../../images/icon-moon.svg" 
+            src="/images/icon-moon.svg" 
             alt="Luna para activar dark mode" 
             onClick={() => setIsDarkMode(true)}
           />
